@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 app.get('/get', function (req, res) {
     request('https://' + req.params.imageURL, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body) // Show the HTML for the Google homepage.
+            res.send(body) // Show the HTML for the Google homepage.
         }
     });
 });
